@@ -6,7 +6,6 @@ import org.apache.log4j.Logger;
 public class Manager {
     private static final Network network = new Network();
     private static final Logger logger = Logger.getLogger(Manager.class);
-    private static final Logic logic = new Logic();
 
     public Manager(){
     }
@@ -24,7 +23,7 @@ public class Manager {
 
     public ConvertedPojo getConvertedPojo(){
         Pojo beforePojo = getPojo();
-        return logic.getConvertedPojo(beforePojo);
+        return null;
     }
 
 }

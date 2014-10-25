@@ -4,14 +4,14 @@
 pageEncoding="UTF-8"%>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <html>
+<c:set var="req" value="${pageContext.request}" />
+<c:set var="baseURL" value="${fn:replace(req.requestURL, fn:substring(req.requestURI, 1, fn:length(req.requestURI)), req.contextPath)}" />
 <head>
-    <c:set var="req" value="${pageContext.request}" />
-    <c:set var="baseURL" value="${fn:replace(req.requestURL, fn:substring(req.requestURI, 1, fn:length(req.requestURI)), req.contextPath)}" />
     <link href="<c:url value="${baseURL}/resources/css/bootstrap.css" />" rel="stylesheet">
     <link href="<c:url value="${baseURL}/resources/css/dashboard.css" />" rel="stylesheet">
 </head>
 <body>
-<form name="UserInput" action="${baseURL}/html/test.html" method="get">
+<form name="UserInput" action="<c:url value="${baseURL}/resources/html/test.html"" method="get">
 <input type="radio" value="Child labour">Child labour<br>
 <input type="radio" value="Deforestation">Desforestation<br>
 <input type="radio" value="Arms trade">Arms trade<br>
